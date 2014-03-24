@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--[if IE 7]><html class="ie7 ie78" lang="fr"><![endif]-->
+<!--[if IE 8]><html class="ie8 ie78" lang="fr"><![endif]-->
+<!--[if gt IE 8]><!--><html lang="fr"><!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+
+		<title>{{{project.title}}} | rudy marc, auteur multimédia / graphiste | rgsone.com</title>
+
+		<meta name="author" content="rgsone">
+		<meta name="description" content="{{{project.title}}}">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="icon" href="favicon.ico">
+		<link rel="stylesheet" href="{{{resourcePath}}}/css/rgsone.min.css" media="all">
+		<!--[if lte IE 7]><style>* { behavior: url('{{{resourcePath}}}/js/boxsizing.htc'); }</style><![endif]-->
+
+		<!--[if lt IE 9]><script src="{{{resourcePath}}}/js/html5shiv.js"></script><![endif]-->
+	</head>
+	<body class="project">
+		<a id="haut"></a>
+		<header>
+			<div class="clearfix">
+				<a class="logo" href="{{{homeUrl}}}" title="Retour à l'accueil"><img src="{{{resourcePath}}}/img/logo-small.png" alt="logo"></a>
+				<nav class="project-nav">
+					<ul>
+						<li><a href="{{{homeUrl}}}#projets" title="Projets">projets</a></li>
+						<li><a href="{{{homeUrl}}}#a-propos" title="À propos">à propos</a></li>
+						<li><a href="{{{homeUrl}}}#contact" title="Me contacter">contact</a></li>
+						<li><a href="http://logs.rgsone.com" title="Voir les Logs">logs</a></li>
+						<li><a href="http://lab.rgsone.com" title="Voir le Lab">lab</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<section class="project-content">
+			<h1 class="w800p center">— {{{project.title}}}</h1>
+			<p class="project-meta w800p center">
+				<span class="txtcolor1 bolder">poste&nbsp;/</span> {{{project.role}}}
+				<span class="txtcolor1 bolder">/&nbsp;année&nbsp;/</span> {{{project.year}}}
+			</p>
+			{{{project.content}}}
+		</section>
+{{> partials/footer }}

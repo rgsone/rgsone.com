@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<!--[if IE 7]><html class="ie7 ie78" lang="fr"><![endif]-->
+<!--[if IE 8]><html class="ie8 ie78" lang="fr"><![endif]-->
+<!--[if gt IE 8]><!--><html lang="fr"><!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+
+		<title>rudy marc, auteur multimédia / graphiste | rgsone.com</title>
+
+		<meta name="author" content="rgsone">
+		<meta name="description" content="rudy marc, auteur multimédia / graphiste | rgsone.com">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="icon" href="favicon.ico">
+		<link rel="stylesheet" href="{{{resourcePath}}}/css/rgsone.min.css" media="all">
+		<!--[if lte IE 7]><style>* { behavior: url('{{{resourcePath}}}/js/boxsizing.htc'); }</style><![endif]-->
+
+		<!--[if lt IE 9]><script src="{{{resourcePath}}}/js/html5shiv.js"></script><![endif]-->
+	</head>
+	<body class="home">
+		<a id="haut"></a>
+		<header>
+			<div class="txtcenter">
+				<img class="logo" src="{{{resourcePath}}}/img/logo.png" alt="logo">
+			</div>
+			<h1 class="txtcenter">rudy marc</h1>
+			<p class="tagline txtcenter">graphiste / auteur multimédia</p>
+			<p class="txtcenter">•</p>
+			<p class="shortbio txtcenter">
+				Graphiste, auteur multimédia, bidouilleur et touche à tout,
+				je développe un travail lié aux usages et aux relations qui émergent
+				entre design graphique et code informatique.
+			</p>
+		</header>
+		<nav class="home-nav">
+			<ul>
+				<li><a href="#projets" title="Projets">projets</a></li>
+				<li><a href="#a-propos" title="À propos">à propos</a></li>
+				<li><a href="#contact" title="Me contacter">contact</a></li>
+				<li><a href="http://logs.rgsone.com" title="Voir les Logs">logs</a></li>
+				<li><a href="http://lab.rgsone.com" title="Voir le Lab">lab</a></li>
+			</ul>
+		</nav>
+		<section class="projects">
+			<div class="down-arrow-icon"><img src="{{{resourcePath}}}/img/icon-down-arrow.png" alt="flêche vers le bas"></div>
+			<h2 class="txtcenter">projets</h2>
+			<hr class="center">
+			<a id="projets"></a>
+			<section class="projects-showcase">
+				<ul>
+					{{#projects.showcase}}
+					<li>
+						<div>
+							<a href="{{{url}}}" title="{{{title}}}"><img src="{{{resourcePath}}}{{{thumbnail}}}" alt="{{{title}}}"></a>
+							<p>{{{year}}} – {{{title}}}</p>
+							<hr>
+						</div>
+					</li>
+					{{/projects.showcase}}
+				</ul>
+			</section>
+			<section class="projects-list">
+				<ul>
+					{{#projects.list}}
+					<li>
+						<a href="{{{url}}}" title="{{{year}}} — {{{title}}}"><img src="{{{resourcePath}}}{{{thumbnail}}}" alt="{{{title}}}"></a>
+					</li>
+					{{/projects.list}}
+				</ul>
+			</section>
+		</section>
+		<a id="a-propos"></a>
+		<section class="about">
+			<h2 class="txtcenter">à propos</h2>
+			<hr class="center">
+			<div class="center w1100p">
+				<div class="about-bio">
+					<p>
+						Diplômé de l’<em>École Supérieure d’Art de Cambrai</em> (DNSEP grade de MASTER 2012), je suis actuellement
+						auteur multimédia et graphiste.
+					</p>
+					<p>
+						Ayant une pratique pluridisciplinaire touchant à la fois le graphisme et le développement informatique,
+						j’ai développé durant mon diplôme une réflexion et un travail de recherche concernant les usages
+						et relations qui émergent entre le design graphique et le code informatique.
+					</p>
+					<p>
+						Je travaille en collaboration avec des graphistes comme <em>Bruno&nbsp;Souêtre</em> ou des ateliers comme <em>Trafik</em>
+						sur des projets allant de l’installation multimédia, de la conception d’application mobile
+						au développement de site internet.
+					</p>
+					<p>
+						J’aime quand le code se mêle à l’image et comprendre comment fonctionne les choses qui m’entourent.
+						<br>
+						Défenseur de la neutralité du Net, je promeus la culture Libre et me revendique de la philosophie
+						hacker/bidouilleur.
+						<br>
+						Les moyens et dispositifs de partage, de transmission et de mise à disposition des connaissances
+						de façon libre et gratuite sont au coeur de mes préoccupations. Je partage ainsi les sources
+						de mon travail afin de les rendre disponibles au plus grand nombre.
+					</p>
+				</div><!-- remove whitespace !
+			 --><div class="about-info">
+					<h3>formation</h3>
+					<p>
+						DNSEP grade de MASTER, École Supérieure d'Art de Cambrai, 2012.
+					</p>
+					<p>
+						DNAP, École Supérieure d'Art de Cambrai, 2010.
+					</p>
+					<h3>expositions</h3>
+					<p>
+						Cas d’Écoles, Imaginarium, Tourcoing, 2012.
+					</p>
+					<p>
+						Collection permanente du Poster Museum de Lahti, Finlande
+						et du musée des Arts Décoratifs de Paris, affiche <em>censored</em>.
+					</p>
+					<p>
+						Poster 4 Tomorrow, exposé dans 24 pays, affiche <em>censored</em>,
+						concours Poster 4 Tomorrow, 2010.
+					</p>
+					<p>
+						<em>Étudiants, tous à Chaumont</em>,
+						Festival international de l’affiche de Chaumont,
+						affiche <em>Nous les Hommes et les Femmes</em>, 2008.
+					</p>
+					<h3>publications</h3>
+					<p>
+						Catalogue Poster 4 Tomorrow,
+						<em>Pencil is mightier than sword</em>, 2010.
+					</p>
+					<p>
+						Catalogue étudiants, Festival international
+						de l’affiche de Chaumont, 2008.
+					</p>
+				</div>
+				<hr>
+			</div>
+		</section>
+		<a id="contact"></a>
+		<section class="contact">
+			<h2 class="txtcenter">me contacter</h2>
+			<div class="txtcenter">
+				<a class="contact-button" href="mailto:hello@rgsone.com">hello@rgsone.com</a>
+			</div>
+			<hr class="center">
+			<ul>
+				<li>
+					<a href="https://github.com/rgsone" title="Mon dépôt Github">
+						<img src="{{{resourcePath}}}/img/icon-social-github-color.png" alt="icône github">
+					</a>
+				</li>
+				<li>
+					<a href="https://www.flickr.com/photos/rgsone/" title="Mon compte Flickr">
+						<img src="{{{resourcePath}}}/img/icon-social-flickr-color.png" alt="icône flickr">
+					</a>
+				</li>
+				<li>
+					<a href="https://twitter.com/rgsonerock" title="Mon compte Twitter">
+						<img src="{{{resourcePath}}}/img/icon-social-twitter-color.png" alt="icône twitter">
+					</a>
+				</li>
+				<li>
+					<a href="http://www.behance.net/RGSONER" title="Ma page Behance">
+						<img src="{{{resourcePath}}}/img/icon-social-behance-color.png" alt="icône behance">
+					</a>
+				</li>
+				<li>
+					<a href="http://www.linkedin.com/pub/rudy-marc/17/a87/507" title="Ma page Linkedin">
+						<img src="{{{resourcePath}}}/img/icon-social-linkedin-color.png" alt="icône linkedin">
+					</a>
+				</li>
+			</ul>
+		</section>
+{{> partials/footer }}
