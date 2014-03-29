@@ -17,6 +17,16 @@ module.exports = function( grunt )
 					interrupt: true,
 					livereload: true
 				}
+			},
+			js: {
+				files: [
+					'public/js/app.js'
+				],
+				tasks: [ 'buildjs' ],
+				options: {
+					interrupt: true,
+					livereload: true
+				}
 			}
 		},
 
@@ -57,7 +67,11 @@ module.exports = function( grunt )
 					'dist/app/libs/**/*.git',
 					'dist/public/bower-components/',
 					'dist/public/css/*.css',
-					'!dist/public/css/*.min.css'
+					'!dist/public/css/*.min.css',
+					'dist/public/js/**/*.js',
+					'!dist/public/js/vendor/vendor.min.js',
+					'!dist/public/js/app.min.js',
+					'!dist/public/js/html5shiv.js'
 				],
 				dot: true
 			},
@@ -76,6 +90,11 @@ module.exports = function( grunt )
 					'public/css/rgsone.min.css'
 				],
 				dest: 'public/css/rgsone.min.css'
+			},
+			js: {
+				files: {
+					'public/js/vendor/vendor.min.js': [ 'public/js/vendor/*.min.js' ]
+				}
 			}
 		},
 
@@ -108,6 +127,24 @@ module.exports = function( grunt )
 					'public/css/rgsone.css': [ 'public/css/rgsone.css' ]
 				}
 			}
+		},
+
+		uglify: {
+			options: {
+				preserveComments: 'some',
+				report: 'gzip'
+			},
+			app: {
+				files: {
+					'public/js/app.min.js': [ 'public/js/app.js' ]
+				}
+			},
+			vendor: {
+				files: {
+					'public/js/vendor/matchMedia.min.js': [ 'public/js/vendor/matchMedia.js' ],
+					'public/js/vendor/requestAnimationFrame.min.js': [ 'public/js/vendor/requestAnimationFrame.js' ]
+				}
+			}
 		}
 	});
 
@@ -120,6 +157,7 @@ module.exports = function( grunt )
 	grunt.loadNpmTasks( 'grunt-contrib-concat' );
 	grunt.loadNpmTasks( 'grunt-autoprefixer' );
 	grunt.loadNpmTasks( 'grunt-csscomb' );
+	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
 
 	////// REGISTER TASK //////
 
@@ -131,6 +169,7 @@ module.exports = function( grunt )
 
 	grunt.registerTask( 'csssort', [ 'csscomb' ] );
 	grunt.registerTask( 'buildcss',  [ 'copy:cssbuild', 'autoprefixer:prefix', 'cssmin', 'concat:css', 'clean:cssbuild' ] );
+	grunt.registerTask( 'buildjs',  [ 'uglify', 'concat:js' ] );
 	grunt.registerTask( 'builddist',  [ 'clean:fulldist', 'copy:distbuild', 'clean:dist' ] );
 	grunt.registerTask( 'cleancache',  [ 'clean:appcache' ] );
 };
