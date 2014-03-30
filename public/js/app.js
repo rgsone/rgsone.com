@@ -96,7 +96,7 @@
 		{
 			elem.addEventListener( eventName, eventHandler, false );
 		}
-		else if ( elel.attachEvent )
+		else if ( elem.attachEvent )
 		{
 			elem.attachEvent( 'on' + eventName, eventHandler );
 		}
