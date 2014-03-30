@@ -4,18 +4,14 @@
 	"use strict";
 
 	var app = {};
-
 	var scrollDuration = 800;
-	var fps = 1000 / 60;
 
-
-	/* ======== */
-
+	/* == PRIVATE ====== */
 
 	/**
 	 * @param opts
 	 * 		duration: duration in ms,
-	 *		delta: delta function, ex: quintEaseOut,
+	 *		delta: delta calcul function, ex: quintEaseOut,
 	 *		step : function to call each step,
 	 *		onComplete : function to call on complete
 	 */
@@ -23,8 +19,6 @@
 	{
 		var start = new Date();
 		var rafId;
-
-		loop();
 
 		function loop()
 		{
@@ -48,26 +42,28 @@
 				opts.onComplete();
 			}
 		}
+
+		loop();
 	};
 
 	/**
-	 * Ease function
+	 * Tween function quintEaseOut
 	 * @param k
 	 * @returns {number}
 	 */
-	var quintEaseOut = function( k ) {
+	var quintEaseOut = function( k )
+	{
 		return 1 - ( --k * k * k * k );
 	};
 
-	/* ======== */
-
+	/* == PUBLIC ====== */
 
 	/**
 	 * Check if DOM is loaded
 	 * @param callback
 	 */
-	app.onReady = function( callback ) {
-
+	app.onReady = function( callback )
+	{
 		var isReady = false;
 
 		function ready()
@@ -77,8 +73,8 @@
 			callback();
 		}
 
-		doc.onreadystatechange = function() {
-
+		doc.onreadystatechange = function()
+		{
 			if ( this.readyState === "complete" )
 			{
 				doc.onreadystatechange = null;
@@ -94,37 +90,40 @@
 	 * @param eventName
 	 * @param eventHandler
 	 */
-	app.bindEvent = function( el, eventName, eventHandler ) {
-
-		if ( el.addEventListener )
+	app.bindEvent = function( elem, eventName, eventHandler )
+	{
+		if ( elem.addEventListener )
 		{
-			el.addEventListener( eventName, eventHandler, false );
+			elem.addEventListener( eventName, eventHandler, false );
 		}
-		else if ( el.attachEvent )
+		else if ( elel.attachEvent )
 		{
-			el.attachEvent( 'on' + eventName, eventHandler );
+			elem.attachEvent( 'on' + eventName, eventHandler );
 		}
 	};
 
 	/**
 	 * Scroll to anchor
 	 * @param targetElem
+	 * @param offsetCorrection
 	 */
 	app.scrollToAnchor = function( targetElem, offsetCorrection )
 	{
+		var offsetCorrect = offsetCorrection || 0;
 		var targetYPos = this.getYPosFromTop( targetElem );
 		var curScrollPos = global.pageYOffset || doc.documentElement.scrollTop;
-		var distance = targetYPos - curScrollPos + offsetCorrection;
-		var locationHash = "#" + targetElem.id;
+		var distance = targetYPos - curScrollPos + offsetCorrect;
 
 		animate({
 			duration: scrollDuration,
 			delta: quintEaseOut,
-			step: function( delta ) {
+			step: function( delta )
+			{
 				global.scrollTo( 0, curScrollPos + delta * distance );
 			},
-			onComplete: function() {
-				//global.location.hash = locationHash;
+			onComplete: function()
+			{
+				//global.location.hash = '#';
 			}
 		});
 	};
@@ -134,7 +133,12 @@
 	 * @param elem
 	 * @returns {number}
 	 */
-	app.getYPosFromTop = function( elem ) {
+	app.getYPosFromTop = function( elem )
+	{
+		if ( elem === undefined || elem === null )
+		{
+			return 0;
+		}
 
 		var topPos = elem.offsetTop,
 			parent = elem.offsetParent;
@@ -150,12 +154,13 @@
 
 	/**
 	 * Check if class exist
-	 * @param el
+	 * @param elem
 	 * @param className
 	 * @returns {boolean}
 	 */
-	app.containsClass = function( el, className ) {
-		return ( " " + el.className + " " ).indexOf( " " + className + " " ) > -1;
+	app.containsClass = function( elem, className )
+	{
+		return ( " " + elem.className + " " ).indexOf( " " + className + " " ) > -1;
 	};
 
 	//// bind to global ////
@@ -237,12 +242,11 @@ rgsoneApp.onReady( function()
 
 	/* =================================== */
 
-
 	var navLinks = document.querySelectorAll( 'a[href^="#"]' );
 
-	Array.prototype.forEach.call( navLinks, function( el, index, nodeList )
+	Array.prototype.forEach.call( navLinks, function( elem, index, nodeList )
 	{
-		rgsoneApp.bindEvent( el, "click", function( e )
+		rgsoneApp.bindEvent( elem, "click", function( e )
 		{
 			var targetElemID = e.currentTarget.href.match( /#([a-zA-Z0-9_-]+)$/ )[ 1 ];
 			var targetElem = document.getElementById( targetElemID );
