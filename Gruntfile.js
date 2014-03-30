@@ -141,8 +141,8 @@ module.exports = function( grunt )
 			},
 			vendor: {
 				files: {
-					'public/js/vendor/matchMedia.min.js': [ 'public/js/vendor/matchMedia.js' ],
-					'public/js/vendor/requestAnimationFrame.min.js': [ 'public/js/vendor/requestAnimationFrame.js' ]
+					'public/js/vendor/matchmedia.min.js': [ 'public/bower-components/matchmedia/matchMedia.js' ],
+					'public/js/vendor/raf.min.js': [ 'public/bower-components/raf.js/raf.js' ]
 				}
 			}
 		}
