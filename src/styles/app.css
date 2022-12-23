@@ -1,0 +1,23 @@
+:root {
+  /* reset scroll-behavior (bypass bootstrap scroll-behavior config) */
+  /* scroll-behavior: auto; */
+
+  --color-primary: #181818;
+  --color-complementary: #e53d07;
+  --color-tertiary: #ececec;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  background-color: var(--color-tertiary);
+  color: var(--color-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
