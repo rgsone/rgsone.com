@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "bootstrap": "^5.2.3",
-    "modern-normalize": "^1.1.0"
+    "three": "^0.148.0",
+    "underscore": "^1.13.6"
   }
 }
